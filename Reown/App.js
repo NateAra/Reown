@@ -1,11 +1,11 @@
 import { StatusBar } from 'expo-status-bar';
-import { SafeAreaView, StyleSheet, Text, Image } from 'react-native';
+import { Image, SafeAreaView, StyleSheet, Text } from 'react-native';
 
 export default function App() {
   return (
     <SafeAreaView style={styles.container}>
       <Text>Hello React Native!</Text>
-      <Image source={require("./assets/favicon.png")} />
+      <Image source={{uri: "https://picsum.photos/200/300"}} />
       <StatusBar style="auto" />
     </SafeAreaView>
   );
