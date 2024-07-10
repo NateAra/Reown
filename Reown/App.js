@@ -1,14 +1,5 @@
-import { StatusBar } from "expo-status-bar";
 import { useState } from "react";
-import {
-  Image,
-  Button,
-  SafeAreaView,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  TouchableWithoutFeedback,
-} from "react-native";
+import { Alert, Button, SafeAreaView, StyleSheet, Text } from "react-native";
 
 export default function App() {
   const [count, setCount] = useState(0);
@@ -19,7 +10,16 @@ export default function App() {
       <Text>Hello React Native!</Text>
       <Button title="Click Me" onPress={onPress} />
       <Text>{count || null}</Text>
-      <Button title="Click Alert" onPress={() => alert("Button Tapped")} />
+      <Button title="Simple Alert" onPress={() => alert("Button Tapped")} />
+      <Button
+        title="Advance Alert"
+        onPress={() =>
+          Alert.alert("Title", "Message", [
+            { text: "Yes", onPress: () => console.log("Yes") },
+            { text: "No", onPress: () => console.log("No") },
+          ])
+        }
+      />
     </SafeAreaView>
   );
 }
