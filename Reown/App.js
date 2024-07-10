@@ -17,8 +17,9 @@ export default function App() {
   return (
     <SafeAreaView style={styles.container}>
       <Text>Hello React Native!</Text>
-      <Button title="Click Me" onPress={onPress}/>
+      <Button title="Click Me" onPress={onPress} />
       <Text>{count || null}</Text>
+      <Button title="Click Alert" onPress={() => alert("Button Tapped")} />
     </SafeAreaView>
   );
 }
