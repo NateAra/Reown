@@ -2,6 +2,7 @@ import { StatusBar } from "expo-status-bar";
 import { useState } from "react";
 import {
   Image,
+  Button,
   SafeAreaView,
   StyleSheet,
   Text,
@@ -16,17 +17,8 @@ export default function App() {
   return (
     <SafeAreaView style={styles.container}>
       <Text>Hello React Native!</Text>
-      <TouchableOpacity onPress={onPress}>
-        <Image
-          source={{
-            width: 200,
-            height: 300,
-            uri: "https://picsum.photos/200/300",
-          }}
-        />
-      </TouchableOpacity>
+      <Button title="Click Me" onPress={onPress}/>
       <Text>{count || null}</Text>
-      <StatusBar style="auto" />
     </SafeAreaView>
   );
 }
