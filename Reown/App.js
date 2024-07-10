@@ -1,17 +1,12 @@
-import {
-  SafeAreaView,
-  StyleSheet,
-  View
-} from "react-native";
+import { SafeAreaView, StyleSheet, View } from "react-native";
 
 export default function App() {
   return (
     <SafeAreaView style={styles.container}>
-      <View></View>
+      <View style={viewStyle}></View>
     </SafeAreaView>
   );
 }
-
 
 const viewStyle = {
   backgroundColor: "dodgerblue",
