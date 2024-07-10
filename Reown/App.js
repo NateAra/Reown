@@ -1,17 +1,31 @@
 import { StatusBar } from "expo-status-bar";
-import { Image, SafeAreaView, StyleSheet, Text } from "react-native";
+import { useState } from "react";
+import {
+  Image,
+  SafeAreaView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  TouchableWithoutFeedback,
+} from "react-native";
 
 export default function App() {
+  const [count, setCount] = useState(0);
+  const onPress = () => setCount(count + 1);
+
   return (
     <SafeAreaView style={styles.container}>
       <Text>Hello React Native!</Text>
-      <Image
-        source={{
-          width: 200,
-          height: 300,
-          uri: "https://picsum.photos/200/300",
-        }}
-      />
+      <TouchableOpacity onPress={onPress}>
+        <Image
+          source={{
+            width: 200,
+            height: 300,
+            uri: "https://picsum.photos/200/300",
+          }}
+        />
+      </TouchableOpacity>
+      <Text>{count || null}</Text>
       <StatusBar style="auto" />
     </SafeAreaView>
   );
