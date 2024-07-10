@@ -14,10 +14,7 @@ export default function App() {
       <Button
         title="Advance Alert"
         onPress={() =>
-          Alert.alert("Title", "Message", [
-            { text: "Yes", onPress: () => console.log("Yes") },
-            { text: "No", onPress: () => console.log("No") },
-          ])
+          Alert.prompt("Title", "Message", (text) => console.log(text))
         }
       />
     </SafeAreaView>
