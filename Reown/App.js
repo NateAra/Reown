@@ -13,8 +13,8 @@ export default function App() {
 
 const viewStyle = {
   backgroundColor: "dodgerblue",
-  width: 150,
-  height: 70,
+  width: "25%",
+  height: "30%",
 };
 
 const styles = StyleSheet.create({
