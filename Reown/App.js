@@ -1,6 +1,9 @@
-import { SafeAreaView, StyleSheet, View } from "react-native";
+import { SafeAreaView, StyleSheet, View, Dimensions } from "react-native";
 
 export default function App() {
+
+  console.log(Dimensions.get("screen"));
+
   return (
     <SafeAreaView style={styles.container}>
       <View style={viewStyle}></View>
