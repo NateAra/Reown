@@ -6,11 +6,10 @@ function WelcomeScreen(props) {
     <ImageBackground
       style={styles.background}
       source={require("../assets/bg-cart.jpg")}
-      resizeMode="cover"
     >
+      <Image style={styles.logo} source={require("../assets/reown-logo.png")} />
       <View style={styles.loginButton}></View>
       <View style={styles.registerButton}></View>
-      <Image style={styles.logo} source={require("../assets/reown-logo.png")} />
     </ImageBackground>
   );
 }
@@ -28,7 +27,7 @@ const styles = StyleSheet.create({
   },
   logo: {
     width: "100%",
-    height: 100,
+    height: 200,
     position: "absolute",
     top: 70,
   },
