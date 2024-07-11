@@ -5,11 +5,12 @@ function WelcomeScreen(props) {
   return (
     <ImageBackground
       style={styles.background}
-      source={require("../assets/bgCart.jpg")}
+      source={require("../assets/bg-cart.jpg")}
+      resizeMode="cover"
     >
-      <Image source={require("../assets/reown-logo.png")}/>
       <View style={styles.loginButton}></View>
       <View style={styles.registerButton}></View>
+      <Image style={styles.logo} source={require("../assets/reown-logo.png")} />
     </ImageBackground>
   );
 }
@@ -17,12 +18,19 @@ function WelcomeScreen(props) {
 const styles = StyleSheet.create({
   background: {
     flex: 1,
-    justifyContent: "flex-end"
+    justifyContent: "flex-end",
+    alignItems: "center",
   },
   loginButton: {
     width: "100%",
     height: 70,
     backgroundColor: "#ecb939",
+  },
+  logo: {
+    width: "100%",
+    height: 100,
+    position: "absolute",
+    top: 70,
   },
   registerButton: {
     width: "100%",
