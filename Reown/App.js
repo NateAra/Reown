@@ -8,7 +8,7 @@ export default function App() {
         backgroundColor: "#E1E1D5",
         flex: 1,
         flexDirection: "row", // horizontal
-        justifyContent: "space-evenly", // main
+        justifyContent: "center", // main
         alignItems: "center" // secondary
       }}
     >
@@ -16,14 +16,14 @@ export default function App() {
         style={{
           backgroundColor: "#0209C6",
           width: 100,
-          height: 100,
+          height: 300,
         }}
       />
       <View
         style={{
           backgroundColor: "#FFD700",
           width: 100,
-          height: 100,
+          height: 200,
         }}
       />
       <View
