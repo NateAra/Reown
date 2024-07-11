@@ -8,6 +8,7 @@ function WelcomeScreen(props) {
       source={require("../assets/bgCart.jpg")}
     >
       <View style={styles.loginButton}></View>
+      <View style={styles.registerButton}></View>
     </ImageBackground>
   );
 }
@@ -15,11 +16,17 @@ function WelcomeScreen(props) {
 const styles = StyleSheet.create({
   background: {
     flex: 1,
+    justifyContent: "flex-end"
   },
   loginButton: {
     width: "100%",
     height: 70,
-    backgroundColor: "#fc5c65",
+    backgroundColor: "#ecb939",
+  },
+  registerButton: {
+    width: "100%",
+    height: 70,
+    backgroundColor: "#313131",
   },
 });
 
