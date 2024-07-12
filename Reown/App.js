@@ -1,10 +1,11 @@
-import { View, StyleSheet } from "react-native";
+import { View, StyleSheet, Text } from "react-native";
 import WelcomeScreen from "./app/screens/WelcomeScreen";
+import AppText from "./app/components/AppText";
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <View style={styles.blueBox}></View>
+      <AppText>React Native</AppText>
     </View>
   );
 }
@@ -14,10 +15,5 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-  },
-  blueBox: {
-    backgroundColor: "dodgerblue",
-    width: 100,
-    height: 100,
   },
 });
