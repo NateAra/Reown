@@ -8,7 +8,7 @@ function AppText({children}) {
 
 const styles = StyleSheet.create({
   text: {
-    fontSize: 18,
+    fontSize: 20,
     fontFamily: Platform.OS === "ios" ? "Courier" : "Avenir",
   },
 });
