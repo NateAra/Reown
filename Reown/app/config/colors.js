@@ -1,7 +1,8 @@
 export default {
   sunflower: "#ecb838",
   mercury: "#ebeaeb",
-  jetBlack: "#181818",
+  darkMoon: "#181818",
+  darkMoonLight: "#2b2b2b",
   gray85: "#d9d9d9",
-  danger: "#FC4100"
+  danger: "#FC4100",
 };
