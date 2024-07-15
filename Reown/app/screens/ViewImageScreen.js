@@ -22,7 +22,7 @@ function ViewImageScreen() {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: colors.jetBlack,
+    backgroundColor: colors.darkMoon,
     flex: 1,
   },
   closeIcon: {
