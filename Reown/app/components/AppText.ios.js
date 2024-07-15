@@ -1,4 +1,5 @@
 import { StyleSheet, Text } from 'react-native';
+import colors from '../config/colors';
 
 function AppText({children}) {
   return (
@@ -8,7 +9,7 @@ function AppText({children}) {
 
 const styles = StyleSheet.create({
   text: {
-    color: "blue",
+    color: colors.secondary,
     fontSize: 20,
     fontFamily: "Courier"
   },
