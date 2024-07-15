@@ -30,6 +30,7 @@ function MessagesScreen(props) {
             title={item.title}
             subTitle={item.description}
             image={item.image}
+            onPress={() => console.log("Message Selected", item)}
           />
         )}
         ItemSeparatorComponent={ListItemSeparator}
@@ -38,8 +39,6 @@ function MessagesScreen(props) {
   );
 }
 
-const styles = StyleSheet.create({
-
-})
+const styles = StyleSheet.create({});
 
 export default MessagesScreen;
