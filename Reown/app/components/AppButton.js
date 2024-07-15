@@ -14,7 +14,7 @@ function AppButton({ title, onPress, color = "primary" }) {
 
 const styles = StyleSheet.create({
   button: {
-    backgroundColor: colors.primary,
+    backgroundColor: colors.sunflower,
     borderRadius: 25,
     justifyContent: "center",
     alignItems: "center",
@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
     marginVertical: 10,
   },
   text: {
-    color: colors.black,
+    color: colors.jetBlack,
     fontSize: 18,
     textTransform: "uppercase",
     fontWeight: "bold",
