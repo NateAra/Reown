@@ -1,5 +1,6 @@
 export default {
-  primary: "#ecb838",
-  secondary: "#ebeaeb",
-  black: "#181818",
+  sunflower: "#ecb838",
+  mercury: "#ebeaeb",
+  jetBlack: "#181818",
+  gray85: "#d9d9d9",
 };
