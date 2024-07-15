@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
     padding: 20,
   },
   title: {
-    color: colors.jetBlack,
+    color: colors.darkMoon,
     fontSize: 25,
     fontWeight: 500,
   },
