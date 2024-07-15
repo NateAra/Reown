@@ -7,7 +7,7 @@ function Icon({
   name,
   size = 40,
   backgroundColor = colors.mercury,
-  iconColor = colors.jetBlack,
+  iconColor = colors.darkMoon,
 }) {
   return (
     <View
@@ -17,7 +17,7 @@ function Icon({
         borderRadius: size / 2,
         backgroundColor: backgroundColor,
         justifyContent: "center",
-        alignItems: "center"
+        alignItems: "center",
       }}
     >
       <MaterialCommunityIcons name={name} color={iconColor} size={size * 0.6} />
