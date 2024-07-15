@@ -2,6 +2,7 @@ import React from "react";
 import { Image, View, StyleSheet } from "react-native";
 import colors from "../config/colors";
 import AppText from "../components/AppText.ios";
+import ListItem from "../components/ListItem";
 
 function ListingDetailsScreen(props) {
   return (
@@ -14,6 +15,13 @@ function ListingDetailsScreen(props) {
       <View style={styles.detailsContainer}>
         <AppText style={styles.title}>Chair for sale</AppText>
         <AppText style={styles.price}>$100</AppText>
+        <View style={styles.userContainer}>
+          <ListItem
+            image={require("../assets/nate.jpg")}
+            title={"Nate Arafayne"}
+            subTitle={"3 Listing"}
+          />
+        </View>
       </View>
     </View>
   );
@@ -37,7 +45,10 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     fontSize: 20,
     marginVertical: 10,
-  }
+  },
+  userContainer: {
+    marginVertical: 40,
+  },
 });
 
 export default ListingDetailsScreen;
