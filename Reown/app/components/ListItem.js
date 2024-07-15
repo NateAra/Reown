@@ -31,11 +31,11 @@ const styles = StyleSheet.create({
     marginRight: 10,
   },
   title: {
-    color: colors.jetBlack,
+    color: colors.mercury,
     fontWeight: 500,
   },
   subTitle: {
-    color: colors.gray85,
+    color: colors.sunflower,
   },
 });
 
