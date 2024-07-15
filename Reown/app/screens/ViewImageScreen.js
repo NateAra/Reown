@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
   closeIcon: {
     width: 50,
     height: 50,
-    backgroundColor: colors.primary,
+    backgroundColor: colors.sunflower,
     position: "absolute",
     top: 50,
     left: 30,
@@ -28,13 +28,13 @@ const styles = StyleSheet.create({
   deleteIcon: {
     width: 50,
     height: 50,
-    backgroundColor: colors.secondary,
+    backgroundColor: colors.mercury,
     position: "absolute",
     top: 50,
     right: 30,
   },
   container: {
-    backgroundColor: colors.black,
+    backgroundColor: colors.jetBlack,
     flex: 1,
   },
   image: {
