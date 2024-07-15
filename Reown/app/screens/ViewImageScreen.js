@@ -1,4 +1,3 @@
-import React from "react";
 import { Image, StyleSheet, View } from "react-native";
 import colors from "../config/colors";
 
@@ -17,6 +16,10 @@ function ViewImageScreen() {
 }
 
 const styles = StyleSheet.create({
+  container: {
+    backgroundColor: colors.jetBlack,
+    flex: 1,
+  },
   closeIcon: {
     width: 50,
     height: 50,
@@ -32,10 +35,6 @@ const styles = StyleSheet.create({
     position: "absolute",
     top: 50,
     right: 30,
-  },
-  container: {
-    backgroundColor: colors.jetBlack,
-    flex: 1,
   },
   image: {
     width: "100%",
