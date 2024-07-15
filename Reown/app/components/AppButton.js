@@ -1,4 +1,4 @@
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { StyleSheet, Text, TouchableOpacity } from "react-native";
 import colors from "../config/colors";
 
 function AppButton({ title, onPress, color = "primary" }) {
@@ -20,9 +20,10 @@ const styles = StyleSheet.create({
     alignItems: "center",
     padding: 15,
     width: "100%",
+    marginVertical: 10,
   },
   text: {
-    color: colors.white,
+    color: colors.black,
     fontSize: 18,
     textTransform: "uppercase",
     fontWeight: "bold",
