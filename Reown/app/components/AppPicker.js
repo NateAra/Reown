@@ -13,7 +13,7 @@ import { useState } from "react";
 import Screen from "./Screen";
 import PickerItem from "./PickerItem";
 
-function AppPicker({ icon, placeholder, items }) {
+function AppPicker({ icon, placeholder, items, selectedItem, onSelectItem }) {
   const [modalVisible, setModalVisible] = useState(false);
 
   return (
@@ -21,7 +21,9 @@ function AppPicker({ icon, placeholder, items }) {
       <TouchableWithoutFeedback onPress={() => setModalVisible(true)}>
         <View style={styles.container}>
           {icon && <Icon name={icon} size={40} iconColor={colors.darkMoon} />}
-          <AppText style={styles.text}>{placeholder}</AppText>
+          <AppText style={styles.text}>
+            {selectedItem ? selectedItem.label : placeholder}
+          </AppText>
           <Icon name={"menu-down"} size={40} />
         </View>
       </TouchableWithoutFeedback>
@@ -34,7 +36,10 @@ function AppPicker({ icon, placeholder, items }) {
             renderItem={({ item }) => (
               <PickerItem
                 label={item.label}
-                onPress={() => console.log(item)}
+                onPress={() => {
+                  setModalVisible(false);
+                  onSelectItem(item);
+                }}
               />
             )}
           />
