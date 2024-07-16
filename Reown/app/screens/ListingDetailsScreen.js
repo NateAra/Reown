@@ -8,7 +8,7 @@ function ListingDetailsScreen(props) {
   return (
     <View>
       <Image
-        resizeMode="strach"
+        resizeMode="starch"
         style={styles.image}
         source={require("../assets/chair.jpg")}
       />
