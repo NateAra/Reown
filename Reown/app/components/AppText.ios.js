@@ -1,16 +1,8 @@
-import { StyleSheet, Text } from "react-native";
-import colors from "../config/colors";
+import { Text } from "react-native";
+import defaultStyles from "../config/defaultStyles";
 
 function AppText({ children, style }) {
-  return <Text style={[styles.text, style]}>{children}</Text>;
+  return <Text style={[defaultStyles.text, style]}>{children}</Text>;
 }
-
-const styles = StyleSheet.create({
-  text: {
-    color: colors.mercury,
-    fontSize: 20,
-    fontFamily: "Courier",
-  },
-});
 
 export default AppText;
