@@ -15,7 +15,7 @@ function LoginScreen(props) {
   const formik = useFormik({
     initialValues: { email: "", password: "" },
     onSubmit: (values) => console.log(values),
-
+    validationSchema,
   });
 
   return (
@@ -31,6 +31,9 @@ function LoginScreen(props) {
         textContentType={"emailAddress"}
         value={formik.values.email}
       />
+      {formik.errors.email && (
+        <AppText style={styles.error}>{formik.errors.email}</AppText>
+      )}
       <AppTextInput
         autoCapitalize={"none"}
         autoCorrect={false}
@@ -41,6 +44,9 @@ function LoginScreen(props) {
         secureTextEntry={true}
         value={formik.values.password}
       />
+      {formik.errors.password && (
+        <AppText style={styles.error}>{formik.errors.password}</AppText>
+      )}
       <AppButton title={"Login"} onPress={formik.handleSubmit} />
     </Screen>
   );
@@ -57,6 +63,9 @@ const styles = StyleSheet.create({
     marginTop: 10,
     marginBottom: 30,
   },
+  error: {
+    color: "red"
+  }
 });
 
 export default LoginScreen;
