@@ -1,19 +1,16 @@
-import { View, StyleSheet, Text } from "react-native";
+import { useState } from "react";
+import { StyleSheet } from "react-native";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
+import LoginScreen from "./app/screens/LoginScreen";
+import AppButton from "./app/components/AppButton";
+import Screen from "./app/components/Screen";
 import WelcomeScreen from "./app/screens/WelcomeScreen";
-import AppText from "./app/components/AppText";
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <AppText>React Native</AppText>
-    </View>
+    <GestureHandlerRootView style={{ flex: 1 }}>
+      <LoginScreen />
+    </GestureHandlerRootView>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-});
