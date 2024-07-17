@@ -11,7 +11,7 @@ function WelcomeScreen(props) {
       <Image style={styles.logo} source={require("../assets/reown-logo.png")} />
       <View style={styles.buttonsContainer}>
         <AppButton title={"Login"} onPress={() => console.log("Tapped")} />
-        <AppButton title={"Register"} color="secondary" />
+        <AppButton title={"Register"} color="mercury" />
       </View>
     </ImageBackground>
   );
