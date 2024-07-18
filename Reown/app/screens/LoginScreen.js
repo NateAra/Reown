@@ -32,7 +32,10 @@ function LoginScreen(props) {
         textContentType={"emailAddress"}
         value={formik.values.email}
       />
-      {formik.touched.email && formik.errors.email && <ErrorMessage error={formik.errors.email} />}
+      <ErrorMessage
+        error={formik.errors.email}
+        visible={formik.touched.email}
+      />
       <AppTextInput
         autoCapitalize={"none"}
         autoCorrect={false}
@@ -44,9 +47,10 @@ function LoginScreen(props) {
         secureTextEntry={true}
         value={formik.values.password}
       />
-      {formik.touched.password && formik.errors.password && (
-        <ErrorMessage error={formik.errors.password} />
-      )}
+      <ErrorMessage
+        error={formik.errors.password}
+        visible={formik.touched.password}
+      />
       <AppButton title={"Login"} onPress={formik.handleSubmit} />
     </Screen>
   );
