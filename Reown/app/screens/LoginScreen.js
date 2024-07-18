@@ -27,22 +27,24 @@ function LoginScreen(props) {
         icon={"email"}
         keyboardType={"email-address"}
         onChangeText={formik.handleChange("email")}
+        onBlur={formik.handleBlur("email")}
         placeholder={"Email"}
         textContentType={"emailAddress"}
         value={formik.values.email}
       />
-      {formik.errors.email && <ErrorMessage error={formik.errors.email} />}
+      {formik.touched.email && formik.errors.email && <ErrorMessage error={formik.errors.email} />}
       <AppTextInput
         autoCapitalize={"none"}
         autoCorrect={false}
         icon={"lock"}
         placeholder={"Password"}
         onChangeText={formik.handleChange("password")}
+        onBlur={formik.handleBlur("password")}
         textContentType={"emailAddress"}
         secureTextEntry={true}
         value={formik.values.password}
       />
-      {formik.errors.password && (
+      {formik.touched.password && formik.errors.password && (
         <ErrorMessage error={formik.errors.password} />
       )}
       <AppButton title={"Login"} onPress={formik.handleSubmit} />
