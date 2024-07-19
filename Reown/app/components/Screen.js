@@ -5,7 +5,7 @@ import colors from "../config/colors";
 function Screen({ children, style }) {
   return (
     <SafeAreaView style={[styles.screen, style]}>
-      <View style={style}>{children}</View>
+      <View style={[ styles.view, style]}>{children}</View>
     </SafeAreaView>
   );
 }
@@ -16,6 +16,10 @@ const styles = StyleSheet.create({
     paddingTop: Constants.statusBarHeight,
     backgroundColor: colors.darkMoon,
   },
+  view: {
+    flex: 1,
+    backgroundColor: colors.darkMoon,
+  }
 });
 
 export default Screen;
