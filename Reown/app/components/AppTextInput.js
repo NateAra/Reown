@@ -3,11 +3,11 @@ import colors from "../config/colors";
 import defaultStyles from "../config/defaultStyles";
 import Icon from "./Icon";
 
-function AppTextInput({ icon, ...otherProps }) {
+function AppTextInput({ icon, width = "100%", style, ...otherProps }) {
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, { width }]}>
       {icon && <Icon name={icon} size={40} iconColor={colors.sunflower} />}
-      <TextInput style={defaultStyles.text} {...otherProps} />
+      <TextInput style={[defaultStyles.text, style]} {...otherProps} />
     </View>
   );
 }
@@ -17,7 +17,6 @@ const styles = StyleSheet.create({
     backgroundColor: colors.mercury,
     flexDirection: "row",
     borderRadius: 30,
-    width: "100%",
     padding: 10,
     marginVertical: 10,
   },
