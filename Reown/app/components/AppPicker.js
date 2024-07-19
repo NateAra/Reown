@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   Button,
   FlatList,
@@ -9,18 +10,24 @@ import {
 import colors from "../config/colors";
 import AppText from "./AppText.ios";
 import Icon from "./Icon";
-import { useState } from "react";
-import Screen from "./Screen";
 import PickerItem from "./PickerItem";
+import Screen from "./Screen";
 
-function AppPicker({ icon, placeholder, items, selectedItem, onSelectItem }) {
+function AppPicker({
+  icon,
+  placeholder,
+  items,
+  selectedItem,
+  onSelectItem,
+  width = "100%",
+}) {
   const [modalVisible, setModalVisible] = useState(false);
 
   return (
     <>
       <TouchableWithoutFeedback onPress={() => setModalVisible(true)}>
-        <View style={styles.container}>
-          {icon && <Icon name={icon} size={40} iconColor={colors.darkMoon} />}
+        <View style={[styles.container, { width }]}>
+          {icon && <Icon name={icon} size={40} iconColor={colors.sunflower} />}
           {selectedItem ? (
             <AppText style={styles.text}>{selectedItem.label}</AppText>
           ) : (
@@ -56,7 +63,6 @@ const styles = StyleSheet.create({
     backgroundColor: colors.mercury,
     flexDirection: "row",
     borderRadius: 30,
-    width: "100%",
     padding: 10,
     marginVertical: 10,
     alignItems: "center",
