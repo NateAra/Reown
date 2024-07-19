@@ -41,25 +41,28 @@ function ListingEditScreen(props) {
           maxLength={255}
         />
         <AppFormField
+          name={"description"}
+          placeholder={"Description"}
+          icon={"script-text"}
+          maxLength={255}
+          multiline={true}
+          numberOfLine={3}
+          style={styles.text}
+        />
+        <AppFormPicker
+          name={"Category"}
+          placeholder={"Category"}
+          icon={"view-list"}
+          items={category}
+          width={"50%"}
+        />
+        <AppFormField
           name={"price"}
           placeholder={"Price"}
           icon={"currency-usd"}
           maxLength={8}
+          width={130}
           keyboardType="numeric"
-        />
-        <AppFormPicker
-          items={category}
-          name={"Category"}
-          // icon={"view-grid"}
-          placeholder={"Category"}
-        />
-        <AppFormField
-          maxLength={255}
-          multiline={true}
-          name={"description"}
-          icon={"script-text"}
-          placeholder={"Description"}
-          numberOfLine={3}
         />
         <SubmitButton title={"Post"} />
       </AppForm>
@@ -71,6 +74,9 @@ const styles = StyleSheet.create({
   container: {
     padding: 10,
   },
+  text: {
+    alignSelf: "center",
+  }
 });
 
 export default ListingEditScreen;
