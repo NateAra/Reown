@@ -1,7 +1,7 @@
 import { Image, ImageBackground, StyleSheet, View } from "react-native";
 import AppButton from "../components/AppButton";
 
-function WelcomeScreen(props) {
+function WelcomeScreen({ navigation }) {
   return (
     <ImageBackground
       blurRadius={5}
@@ -10,8 +10,8 @@ function WelcomeScreen(props) {
     >
       <Image style={styles.logo} source={require("../assets/reown-logo.png")} />
       <View style={styles.buttonsContainer}>
-        <AppButton title={"Login"} onPress={() => console.log("Tapped")} />
-        <AppButton title={"Register"} color="mercury" />
+        <AppButton title={"Login"} onPress={() => navigation.navigate("Login")} />
+        <AppButton title={"Register"} color="mercury" onPress={() => navigation.navigate("Register")} />
       </View>
     </ImageBackground>
   );
