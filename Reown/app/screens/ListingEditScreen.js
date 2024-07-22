@@ -1,5 +1,9 @@
+import * as Location from "expo-location";
+import { useEffect, useState } from "react";
 import { StyleSheet } from "react-native";
 import * as y from "yup";
+import CategoryPickerItem from "../components/CategoryPickerItem";
+import FormImagePicker from "../components/forms/FormImagePicker";
 import {
   AppForm,
   AppFormField,
@@ -7,8 +11,6 @@ import {
   SubmitButton,
 } from "../components/forms/index";
 import Screen from "../components/Screen";
-import CategoryPickerItem from "../components/CategoryPickerItem";
-import FormImagePicker from "../components/forms/FormImagePicker";
 
 const validationSchema = y.object().shape({
   title: y.string().required().min(1).label("Title"),
@@ -21,14 +23,39 @@ const validationSchema = y.object().shape({
 const category = [
   { label: "Books", value: 1, backgroundColor: "white", icon: "bookshelf" },
   { label: "Sports", value: 2, backgroundColor: "white", icon: "basketball" },
-  { label: "Games", value: 3, backgroundColor: "white", icon: "gamepad-square" },
+  {
+    label: "Games",
+    value: 3,
+    backgroundColor: "white",
+    icon: "gamepad-square",
+  },
   { label: "Clothing", value: 4, backgroundColor: "white", icon: "shoe-heel" },
   { label: "Furniture", value: 5, backgroundColor: "white", icon: "lamps" },
-  { label: "Other", value: 6, backgroundColor: "white", icon: "treasure-chest" },
-  
+  {
+    label: "Other",
+    value: 6,
+    backgroundColor: "white",
+    icon: "treasure-chest",
+  },
 ];
 
-function ListingEditScreen(props) {
+function ListingEditScreen() {
+  const [location, setLocation] = useState();
+
+  const getLocation = async () => {
+    const result = await Location.requestForegroundPermissionsAsync();
+    if (!result.granted) return;
+
+    const {
+      coords: { latitude, longitude },
+    } = await Location.getLastKnownPositionAsync();
+    setLocation({ latitude, longitude });
+  };
+
+  useEffect(() => {
+    getLocation();
+  }, []);
+
   return (
     <Screen style={styles.container}>
       <AppForm
@@ -87,7 +114,7 @@ const styles = StyleSheet.create({
   },
   text: {
     alignSelf: "center",
-  }
+  },
 });
 
 export default ListingEditScreen;
