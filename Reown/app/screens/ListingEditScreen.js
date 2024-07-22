@@ -8,12 +8,14 @@ import {
 } from "../components/forms/index";
 import Screen from "../components/Screen";
 import CategoryPickerItem from "../components/CategoryPickerItem";
+import FormImagePicker from "../components/forms/FormImagePicker";
 
 const validationSchema = y.object().shape({
   title: y.string().required().min(1).label("Title"),
   price: y.number().required().min(1).max(10000).label("Price"),
   description: y.string().label("Description"),
   category: y.object().required().nullable().label("Category"),
+  images: y.array().min(1, "Please select at least one image."),
 });
 
 const category = [
@@ -35,10 +37,12 @@ function ListingEditScreen(props) {
           price: "",
           description: "",
           category: null,
+          images: [],
         }}
         onSubmit={(values) => console.log(values)}
         validationSchema={validationSchema}
       >
+        <FormImagePicker name={"images"} />
         <AppFormField
           name={"title"}
           placeholder={"Title"}
