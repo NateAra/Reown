@@ -7,6 +7,7 @@ import {
   SubmitButton,
 } from "../components/forms/index";
 import Screen from "../components/Screen";
+import CategoryPickerItem from "../components/CategoryPickerItem";
 
 const validationSchema = y.object().shape({
   title: y.string().required().min(1).label("Title"),
@@ -16,9 +17,13 @@ const validationSchema = y.object().shape({
 });
 
 const category = [
-  { label: "Shoes", value: 1 },
-  { label: "Clothing", value: 2 },
-  { label: "Furniture", value: 3 },
+  { label: "Books", value: 1, backgroundColor: "white", icon: "bookshelf" },
+  { label: "Sports", value: 2, backgroundColor: "white", icon: "basketball" },
+  { label: "Games", value: 3, backgroundColor: "white", icon: "gamepad-square" },
+  { label: "Clothing", value: 4, backgroundColor: "white", icon: "shoe-heel" },
+  { label: "Furniture", value: 5, backgroundColor: "white", icon: "lamps" },
+  { label: "Other", value: 6, backgroundColor: "white", icon: "treasure-chest" },
+  
 ];
 
 function ListingEditScreen(props) {
@@ -52,6 +57,8 @@ function ListingEditScreen(props) {
         <AppFormPicker
           name={"Category"}
           placeholder={"Category"}
+          numberOfColumns={3}
+          PickerItemComponent={CategoryPickerItem}
           icon={"view-list"}
           items={category}
           width={"50%"}
