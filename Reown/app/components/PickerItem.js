@@ -3,10 +3,10 @@ import { TouchableOpacity, StyleSheet } from "react-native";
 import AppText from "./AppText.ios";
 import colors from "../config/colors";
 
-function PickerItem({ label, onPress }) {
+function PickerItem({ onPress, item }) {
   return (
     <TouchableOpacity onPress={onPress}>
-      <AppText style={styles.text}>{label}</AppText>
+      <AppText style={styles.text}>{item.label}</AppText>
     </TouchableOpacity>
   );
 }
@@ -14,7 +14,7 @@ function PickerItem({ label, onPress }) {
 const styles = StyleSheet.create({
   text: {
     padding: 10,
-    color: colors.mercury
+    color: colors.mercury,
   },
 });
 
