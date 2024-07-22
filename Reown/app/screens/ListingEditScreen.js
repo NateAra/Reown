@@ -1,5 +1,3 @@
-import * as Location from "expo-location";
-import { useEffect, useState } from "react";
 import { StyleSheet } from "react-native";
 import * as y from "yup";
 import CategoryPickerItem from "../components/CategoryPickerItem";
@@ -11,6 +9,7 @@ import {
   SubmitButton,
 } from "../components/forms/index";
 import Screen from "../components/Screen";
+import useLocation from "../hooks/useLocation";
 
 const validationSchema = y.object().shape({
   title: y.string().required().min(1).label("Title"),
@@ -39,22 +38,9 @@ const category = [
   },
 ];
 
-function ListingEditScreen() {
-  const [location, setLocation] = useState();
+function ListingEditScreen() { 
 
-  const getLocation = async () => {
-    const result = await Location.requestForegroundPermissionsAsync();
-    if (!result.granted) return;
-
-    const {
-      coords: { latitude, longitude },
-    } = await Location.getLastKnownPositionAsync();
-    setLocation({ latitude, longitude });
-  };
-
-  useEffect(() => {
-    getLocation();
-  }, []);
+  const location = useLocation();
 
   return (
     <Screen style={styles.container}>
@@ -66,7 +52,7 @@ function ListingEditScreen() {
           category: null,
           images: [],
         }}
-        onSubmit={(values) => console.log(values)}
+        onSubmit={(values) => console.log(location)}
         validationSchema={validationSchema}
       >
         <FormImagePicker name={"images"} />
