@@ -1,5 +1,6 @@
 import { Image, ImageBackground, StyleSheet, View } from "react-native";
 import AppButton from "../components/AppButton";
+import routes from "../navigation/routes";
 
 function WelcomeScreen({ navigation }) {
   return (
@@ -10,8 +11,8 @@ function WelcomeScreen({ navigation }) {
     >
       <Image style={styles.logo} source={require("../assets/reown-logo.png")} />
       <View style={styles.buttonsContainer}>
-        <AppButton title={"Login"} onPress={() => navigation.navigate("Login")} />
-        <AppButton title={"Register"} color="mercury" onPress={() => navigation.navigate("Register")} />
+        <AppButton title={"Login"} onPress={() => navigation.navigate(routes.LOGIN)} />
+        <AppButton title={"Register"} color="mercury" onPress={() => navigation.navigate(routes.REGISTER)} />
       </View>
     </ImageBackground>
   );
