@@ -4,17 +4,15 @@ import colors from "../config/colors";
 import AppText from "../components/AppText.ios";
 import ListItem from "../components/ListItem";
 
-function ListingDetailsScreen(props) {
+function ListingDetailsScreen({ route }) {
+  const listing = route.params;
+
   return (
     <View>
-      <Image
-        resizeMode="starch"
-        style={styles.image}
-        source={require("../assets/chair.jpg")}
-      />
+      <Image resizeMode="starch" style={styles.image} source={listing.image} />
       <View style={styles.detailsContainer}>
-        <AppText style={styles.title}>Chair for sale</AppText>
-        <AppText style={styles.price}>$100</AppText>
+        <AppText style={styles.title}>{listing.title}</AppText>
+        <AppText style={styles.price}>${listing.price}</AppText>
         <View style={styles.userContainer}>
           <ListItem
             image={require("../assets/nate.jpg")}
@@ -36,12 +34,12 @@ const styles = StyleSheet.create({
     padding: 20,
   },
   title: {
-    color: colors.darkMoon,
+    color: colors.mercury,
     fontSize: 25,
     fontWeight: 500,
   },
   price: {
-    color: colors.sunflower,
+    color: colors.mercury,
     fontWeight: "bold",
     fontSize: 20,
     marginVertical: 10,
