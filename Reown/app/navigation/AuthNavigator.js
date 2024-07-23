@@ -4,6 +4,7 @@ import colors from "../config/colors";
 import LoginScreen from "../screens/LoginScreen";
 import RegisterScreen from "../screens/RegisterScreen";
 import WelcomeScreen from "../screens/WelcomeScreen";
+import myTheme from "./navigationTheme";
 
 const Stack = createNativeStackNavigator();
 
@@ -11,9 +12,9 @@ const AuthNavigator = () => (
   <Stack.Navigator
     screenOptions={{
       headerStyle: {
-        backgroundColor: colors.darkMoonLight,
+        backgroundColor: myTheme.header.backgroundColor
       },
-      headerTintColor: colors.mercury,
+      headerTintColor: myTheme.header.headerTintColor
     }}
   >
     <Stack.Screen
