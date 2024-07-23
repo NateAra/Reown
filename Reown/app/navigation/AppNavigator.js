@@ -9,7 +9,11 @@ const Tab = createBottomTabNavigator();
 
 const AppNavigator = () => (
   <Tab.Navigator>
-    <Tab.Screen name="Feed" component={FeedNavigator} options={{ headerShown: false }} />
+    <Tab.Screen
+      name="Feed"
+      component={FeedNavigator}
+      options={{ headerShown: false }}
+    />
     <Tab.Screen name="ListingEdit" component={ListingEditScreen} />
     <Tab.Screen name="Account" component={AccountScreen} />
   </Tab.Navigator>
