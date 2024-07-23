@@ -2,7 +2,7 @@ import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import ListingScreen from "../screens/ListingScreen";
 import ListingDetailsScreen from "../screens/ListingDetailsScreen";
-import myTheme from "./navigationTheme";
+import myTheme from "./NavTheme";
 
 const Stack = createNativeStackNavigator();
 
@@ -14,17 +14,11 @@ const FeedNavigator = () => (
       },
       headerTintColor: myTheme.header.headerTintColor,
       presentation: "modal",
-      headerShown: false
+      headerShown: false,
     }}
   >
-    <Stack.Screen
-      name="Listing"
-      component={ListingScreen}
-    />
-    <Stack.Screen
-      name="ListingDetails"
-      component={ListingDetailsScreen}
-    />
+    <Stack.Screen name="Listing" component={ListingScreen} />
+    <Stack.Screen name="ListingDetails" component={ListingDetailsScreen} />
   </Stack.Navigator>
 );
 
