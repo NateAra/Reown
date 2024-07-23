@@ -1,6 +1,6 @@
 import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import myTheme from "./navigationTheme";
+import myTheme from "./NavTheme";
 import AccountScreen from "../screens/AccountScreen";
 import MessagesScreen from "../screens/MessagesScreen";
 
@@ -8,15 +8,14 @@ const Stack = createNativeStackNavigator();
 
 const AccountNavigator = () => (
   <Stack.Navigator
-    // screenOptions={{
-    //   headerStyle: {
-    //     backgroundColor: myTheme.header.backgroundColor,
-    //   },
-    //   headerTintColor: myTheme.header.headerTintColor,
-    //   presentation: "modal",
-    // }}
+    screenOptions={{
+      headerStyle: {
+        backgroundColor: myTheme.header.backgroundColor,
+      },
+      headerTintColor: myTheme.header.headerTintColor,
+    }}
   >
-    <Stack.Screen name="User" component={AccountScreen} />
+    <Stack.Screen name="Account" component={AccountScreen} />
     <Stack.Screen name="Messages" component={MessagesScreen} />
   </Stack.Navigator>
 );
