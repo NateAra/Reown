@@ -20,7 +20,7 @@ const menuItems = [
       name: "email",
       backgroundColor: colors.mercury,
     },
-    targetScreen: "Messages"
+    targetScreen: "Messages",
   },
 ];
 
