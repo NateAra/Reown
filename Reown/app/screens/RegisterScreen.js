@@ -49,7 +49,8 @@ function RegisterScreen() {
 
 const styles = StyleSheet.create({
   container: {
-    padding: 10,
+    paddingHorizontal: 10,
+    paddingTop: 25,
   },
 });
 
