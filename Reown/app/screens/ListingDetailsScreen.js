@@ -18,6 +18,7 @@ function ListingDetailsScreen({ route }) {
             image={require("../assets/nate.jpg")}
             title={"Nate Arafayne"}
             subTitle={"3 Listing"}
+            style={styles.userDetail}
           />
         </View>
       </View>
@@ -31,7 +32,8 @@ const styles = StyleSheet.create({
     height: 300,
   },
   detailsContainer: {
-    padding: 20,
+    paddingHorizontal: 10,
+    paddingTop: 20
   },
   title: {
     color: colors.mercury,
@@ -45,8 +47,13 @@ const styles = StyleSheet.create({
     marginVertical: 10,
   },
   userContainer: {
-    marginVertical: 40,
+    marginVertical: 25,
   },
+  userDetail: {
+    padding: 0,
+    backgroundColor: colors.darkMoonLight,
+    borderRadius: 40
+  }
 });
 
 export default ListingDetailsScreen;
