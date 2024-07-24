@@ -1,10 +1,10 @@
 {
   "name": "reown-backend",
   "version": "1.0.0",
-  "description": "Backend for the Reown app",
-  "main": "src/index.js",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "start": "node src/index.js"
+    "start": "node index.js"
   },
   "keywords": [],
   "author": "Nate Arafayne",
