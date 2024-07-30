@@ -15,7 +15,7 @@ const AccountNavigator = () => (
       headerTintColor: myTheme.header.headerTintColor,
     }}
   >
-    <Stack.Screen name="Account" component={AccountScreen} />
+    <Stack.Screen name="Acc" component={AccountScreen} options={{ headerShown: false}} />
     <Stack.Screen name="Messages" component={MessagesScreen} />
   </Stack.Navigator>
 );
