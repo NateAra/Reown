@@ -8,11 +8,14 @@ import colors from "../config/colors";
 import AppText from "./AppText.ios";
 
 function Card({ title, subTitle, imageUrl, onPress }) {
-
   return (
     <TouchableWithoutFeedback onPress={onPress}>
       <View style={styles.card}>
-        <Image resizeMode="stretch" style={styles.image} source={{ uri: imageUrl}} />
+        <Image
+          resizeMode="stretch"
+          style={styles.image}
+          source={{ uri: imageUrl }}
+        />
         <View style={styles.detailsContainer}>
           <AppText style={styles.title}>{title}</AppText>
           <AppText style={styles.subTitle}>{subTitle}</AppText>
