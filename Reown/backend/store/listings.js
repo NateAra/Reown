@@ -1,7 +1,7 @@
 const listings = [
   {
     id: 201,
-    title: "Red jacket",
+    title: "Nick Therma-fit Tech Fleece Jacket",
     images: [{ fileName: "jacket1" }],
     price: 100,
     categoryId: 5,
@@ -55,9 +55,9 @@ const listings = [
   },
   {
     id: 102,
-    title: "Canon 400D (Great Condition)",
+    title: "Vintage Rangefinder Camera",
     images: [{ fileName: "camera1" }],
-    price: 300,
+    price: 500,
     categoryId: 3,
     userId: 1,
     location: {
