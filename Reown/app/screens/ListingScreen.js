@@ -1,20 +1,25 @@
 import React, { useEffect, useState } from "react";
 import Screen from "../components/Screen";
-import { FlatList, StyleSheet } from "react-native";
+import { Button, FlatList, StyleSheet } from "react-native";
 import Card from "../components/Card";
 import routes from "../navigation/routes";
 import listingApi from "../api/listings";
+import AppText from "../components/AppText.ios";
+import AppButton from "../components/AppButton";
+import { ErrorMessage } from "../components/forms";
 
 function ListingScreen({ navigation }) {
   const [listings, setListings] = useState([]);
+  const [error, setError] = useState("");
 
   const loadListing = async () => {
-    try {
-      const response = await listingApi.getListings();
-      setListings(response.data);
-    } catch (error) {
-      console.error("Error fetching listings", error);
+    const response = await listingApi.getListings();
+    if (!response.ok) {
+      setError("Couldn't retrieve the listings.");
+      return;
     }
+    setError("");
+    setListings(response.data);
   };
 
   useEffect(() => {
@@ -23,6 +28,12 @@ function ListingScreen({ navigation }) {
 
   return (
     <Screen style={styles.screen}>
+      {error && (
+        <>
+          <ErrorMessage error={error} visible={true} />
+          <AppButton title="Retry" onPress={loadListing} />
+        </>
+      )}
       <FlatList
         data={listings}
         keyExtractor={(listing) => listing.id.toString()}
