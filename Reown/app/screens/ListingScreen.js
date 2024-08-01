@@ -1,12 +1,11 @@
-import React, { useEffect, useState } from "react";
-import Screen from "../components/Screen";
-import { Button, FlatList, StyleSheet } from "react-native";
-import Card from "../components/Card";
-import routes from "../navigation/routes";
+import { useEffect, useState } from "react";
+import { FlatList, StyleSheet } from "react-native";
 import listingApi from "../api/listings";
-import AppText from "../components/AppText.ios";
 import AppButton from "../components/AppButton";
+import Card from "../components/Card";
 import { ErrorMessage } from "../components/forms";
+import Screen from "../components/Screen";
+import routes from "../navigation/routes";
 
 function ListingScreen({ navigation }) {
   const [listings, setListings] = useState([]);
