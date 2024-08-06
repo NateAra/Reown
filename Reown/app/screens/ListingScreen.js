@@ -6,17 +6,23 @@ import Card from "../components/Card";
 import { ErrorMessage } from "../components/forms";
 import Screen from "../components/Screen";
 import routes from "../navigation/routes";
+import ActiveIndicator from "../components/ActiveIndicator";
 
 function ListingScreen({ navigation }) {
   const [listings, setListings] = useState([]);
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const loadListing = async () => {
+    setLoading(true);
     const response = await listingApi.getListings();
+    setLoading(false);
+
     if (!response.ok) {
       setError("Couldn't retrieve the listings.");
       return;
     }
+
     setError("");
     setListings(response.data);
   };
@@ -33,6 +39,7 @@ function ListingScreen({ navigation }) {
           <AppButton title="Retry" onPress={loadListing} />
         </>
       )}
+      <ActiveIndicator visible={loading} />
       <FlatList
         data={listings}
         keyExtractor={(listing) => listing.id.toString()}
