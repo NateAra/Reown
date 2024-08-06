@@ -13,7 +13,7 @@ const listings = [
   },
   {
     id: 3,
-    title: "Gray couch in a great condition",
+    title: "Luxurious Green Velvet Sofa",
     images: [{ fileName: "couch2" }],
     categoryId: 1,
     price: 1200,
@@ -25,7 +25,7 @@ const listings = [
   },
   {
     id: 1,
-    title: "Room & Board couch (great condition) - delivery included",
+    title: "Vintage Brown Leather Sofa (great condition) - delivery included",
     description:
       "I'm selling my furniture at a discount price. Pick up at Venice. DM me asap.",
     images: [
@@ -43,7 +43,7 @@ const listings = [
   },
   {
     id: 2,
-    title: "Designer wear shoes",
+    title: "Adidas Continental 80",
     images: [{ fileName: "shoes1" }],
     categoryId: 5,
     price: 100,
@@ -67,7 +67,7 @@ const listings = [
   },
   {
     id: 101,
-    title: "Nikon D850 for sale",
+    title: "Leica M6 Classic Rangefinder Camera",
     images: [{ fileName: "camera2" }],
     price: 350,
     categoryId: 3,
@@ -79,7 +79,7 @@ const listings = [
   },
   {
     id: 4,
-    title: "Sectional couch - Delivery available",
+    title: "Modern Navy Blue Sofa with Red Accent Pillows - Delivery available",
     description: "No rips no stains no odors",
     images: [{ fileName: "couch3" }],
     categoryId: 1,
@@ -92,7 +92,7 @@ const listings = [
   },
   {
     id: 6,
-    title: "Brown leather shoes",
+    title: "Dallas Cowboys Moccasin slippers",
     images: [{ fileName: "shoes2" }],
     categoryId: 5,
     price: 50,
